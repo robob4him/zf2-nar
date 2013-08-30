@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="http:/getbootstrap.com/assets/ico/favicon.png">
+    <!-- <link rel="shortcut icon" href="http:/getbootstrap.com/assets/ico/favicon.png"> -->
 
     <title>Narwhal: ZF2 Navigation, Acl, and Routing</title>
 
@@ -497,6 +497,181 @@
 
     </div> <!-- /container -->
 
+    <div class="container template-container" style="display: none;">
+      <!-- Resource template -->
+      <div id="resource-template" class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#resource-X" data-value="">
+          <span class="nar-res-group"></span> 
+          <span class="badge pull-right">0</span>
+        </div>
+        <div id="resource-X" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="form-label col-md-4">Prefix</label>
+              <span class="nar-nav-prefix btn btn-primary btn-xs form-static-control"></span>
+            </div>
+          </div>
+          <div class="list-group alert-list-group">
+            <a class="list-group-item list-group-item-sm">
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Resource" />
+                <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Role template -->
+      <div id="role-template" class="panel panel-default">
+        <div class="nar-rol-group panel-heading" data-toggle="collapse" data-target="#role-X"> <span class="badge pull-right">0</span></div>
+        <div id="role-0" class="panel-collapse collapse">
+          <div class="list-group alert-list-group">
+            <a class="list-group-item list-group-item-sm">
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Role" />
+                <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- User template -->
+      <div id="user-template" class="panel panel-default">
+        <div class="nar-usr-group panel-heading" data-toggle="collapse" data-target="#users"> <span class="badge pull-right">0</span></div>
+        <div id="users" class="panel-collapse collapse">
+          <div class="list-group alert-list-group">
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation template -->
+      <div id="navigation-template" class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#navigation-X"><span class="nar-nav-name"></span> <span class="badge pull-right">0</span></div>
+        <div id="navigation-X" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="form-label col-md-4">Group</label>
+              <span class="nar-nav-group btn btn-default btn-xs form-static-control">(None)</span>
+            </div>
+          </div>
+          <div class="list-group alert-list-group">
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation item template -->
+      <a id="navigation-item-template" class="list-group-item">
+        <div class="alert">
+          <span class="nar-nav-menu-name list-group-item-heading"></span>
+          <span class="nar-nav-menu-route btn btn-default btn-xs pull-right" title="Route">(None)</span>
+          <div class="list-group-item-text">
+            <dl>
+              <dt class="sr-only">
+                <caption>Resource and Privilege</caption>
+              </dt>
+              <dd>
+                <div class="nar-nav-menu-rp btn-group">
+                  <span class="nar-nav-menu-rp-res btn btn-default btn-xs" title="Resource">(None)</span>
+                  <span class="nar-nav-menu-rp-pri btn btn-default btn-xs" title="Privilege">(None)</span>
+                </div>
+              </dd>
+            </dl>
+          </div>
+        </div>
+      </a>
+
+      <!-- Route template -->
+      <div id="route-template" class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" data-target="#route-X"><span class="nar-route-name"></span> <span class="badge pull-right">0</span></div>
+        <div id="route-X" class="panel-collapse collapse">
+          <div class="panel-body">
+            <div class="form-group row">
+              <label class="form-label col-md-4">Namespace</label>
+              <span class="col-md-8">
+                <span class="nar-route-namespace btn btn-default btn-xs form-static-control">(None)</span>
+              </span>
+            </div>
+            <div class="form-group row">
+              <label class="form-label col-md-4">Controller</label>
+              <span class="col-md-8">
+                <span class="nar-route-controller btn btn-default btn-xs form-static-control">(None)</span>
+              </span>
+            </div>
+            <div class="form-group row">
+              <label class="form-label col-md-4">Roles</label>
+              <span class="col-md-8">
+                <span class="form-static-control">
+                  <ul class="nar-route-roles list-unstyled">
+                  </ul>
+                </span>
+              </span>
+            </div>
+          </div>
+          <div class="list-group alert-list-group">
+          </div>
+        </div>
+      </div>
+
+      <!-- Route item template -->
+      <a id="route-item-template" class="list-group-item">
+        <div class="alert">
+          <span class="list-group-item-heading">
+            <span class="nar-route-sub-name"></span>
+            <div class="btn-group pull-right">
+              <span class="nar-route-sub-namespace btn btn-default btn-xs" title="Namespace">(None)</span>
+              <span class="nar-route-sub-controller btn btn-default btn-xs" title="Controller">(None)</span>
+              <span class="nar-route-sub-action btn btn-default btn-xs" title="Action">(None)</span>
+            </div>
+          </span> 
+          <div class="list-group-item-text">
+            
+          </div>
+        </div>
+      </a>
+
+      <!-- Route sub-item definition template -->
+      <dl id="route-sub-item-definition-template" >
+        <dt>
+          <caption class="nar-route-sub-def">
+            <span class="nar-route-sub-def-type"></span>
+            <span class="pull-right btn btn-default btn-xs">Edit</span>
+            <span class="pull-right badge">0</span>
+          </caption>
+        </dt>
+        <dd class="nar-route-sub-def-detail" style="display: none;">
+        </dd>
+      </dl>
+
+      <!-- Segment Route template -->
+      <table id="segment-route-template" class="table table-condensed">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Constraint</th>
+            <th>Prepend</th>
+            <th>Optional</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td><input type="text" class="form-control input-sm" /></td>
+            <td><input type="text" class="form-control input-sm" /></td>
+            <td><input type="text" class="form-control input-sm" /></td>
+            <td><input type="checkbox" class="form-control" value="1" checked="checked" /></td>
+            <td><button class="btn btn-default btn-sm">Add</button></td>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div><!-- /.template-container -->
+
+    <div class="modal-container">
+
+    </div><!-- /.modal-container -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
