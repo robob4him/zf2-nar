@@ -128,3 +128,25 @@ body {
     background-color: rgba(255, 255, 255, 0.56);
     color: #333;
 }
+
+.panel-group {
+    margin-bottom: 20px;
+}
+
+.panel-heading small {
+    font-weight: normal;
+    color: #999;
+}
+
+.panel .list-group {
+    margin-bottom: 0;
+}
+
+.panel .list-group .list-group-item {
+    border-width: 1px 0;
+}
+
+.panel .list-group .list-group-item:first-child {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}

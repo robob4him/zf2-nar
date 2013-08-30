@@ -13,7 +13,7 @@
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/justified-nav.css" rel="stylesheet">
+    <link href="narwhal.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -30,81 +30,197 @@
       </div>
 
       <div class="row">
-        <div class="col-md-4">
-          <h4>Navigation</h4>
-          <div class="navigation-panel panel panel-default">
-            <div class="panel-heading"><span class="nar-nav-name">Client</span> <span class="badge pull-right">3</span></div>
-            <div class="panel-body">
-              <div class="form-group">
-                <label class="form-label col-md-4">Group</label>
-                <span class="nar-nav-group btn btn-default btn-xs form-static-control">(default)</span>
+        <div class="acl-column col-md-4 col-md-push-4">
+          <h4>ACL <small id="acl-expand" class="btn btn-xs pull-right" onClick="acl.expand()">+ expand</small><small id="acl-collapse" class="btn btn-xs pull-right" onClick="acl.collapse()" style="display: none;">-collapse</small></h4>
+          <div class="row">
+            <div class="acl-col col-md-12">
+              <h5><strong>Resources</strong></h5>
+              <div class="resource-panel-group panel-group">
+                <div class="panel panel-default">
+                  <div class="nar-res-group panel-heading" data-toggle="collapse" data-target="#resource-0" data-value="controller/Application\Controller\Client">Application\Controller\Client <span class="badge pull-right">3</span></div>
+                  <div id="resource-0" class="panel-collapse collapse">
+                    <div class="panel-body">
+                      <div class="form-group">
+                        <label class="form-label col-md-4">Prefix</label>
+                        <span class="nar-nav-prefix btn btn-primary btn-xs form-static-control">controller/</span>
+                      </div>
+                    </div>
+                    <div class="list-group alert-list-group">
+                      <a class="list-group-item"><div class="nar-res-name alert" data-value="list">List</div></a>
+                      <a class="list-group-item"><div class="nar-res-name alert" data-value="view">View</div></a>
+                      <a class="list-group-item"><div class="nar-res-name alert" data-value="edit">Edit</div></a>
+                      <a class="list-group-item list-group-item-sm">
+                        <div class="input-group input-group-sm">
+                          <input type="text" class="form-control" placeholder="Resource" />
+                          <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="form-group">
-                <label class="form-label col-md-4">Prefix</label>
-                <span class="nar-nav-prefix btn btn-primary btn-xs form-static-control">controller/</span>
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Resource group" />
+                <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
               </div>
             </div>
-            <div class="list-group">
-              <a class="list-group-item">
-                <span class="nar-nav-menu-name list-group-item-heading">List</span>
-                <span class="nar-nav-menu-route btn btn-success btn-xs pull-right" title="Route">List</span>
-                <div class="list-group-item-text">
-                  <dl>
-                    <dt class="sr-only">
-                      <caption>Resource and Privilege</caption>
-                    </dt>
-                    <dd>
-                      <div class="nar-nav-menu-rp btn-group">
-                        <span class="nar-nav-menu-rp-pre btn btn-primary btn-xs" title="Prefix">controller/</span>
-                        <span class="nar-nav-menu-rp-res btn btn-info btn-xs" title="Resource">Application\Controller\Client</span>
-                        <span class="nar-nav-menu-rp-pri btn btn-success btn-xs" title="Privilege">list</span>
+            <div class="acl-col col-md-12">
+              <h5><strong>Roles</strong></h5>
+              <div class="role-panel-group panel-group">
+                <div class="panel panel-default">
+                  <div class="nar-rol-group panel-heading" data-toggle="collapse" data-target="#role-0">guest <span class="badge pull-right">0</span></div>
+                  <div id="role-0" class="panel-collapse collapse">
+                    <div class="list-group alert-list-group">
+                      <a class="list-group-item list-group-item-sm">
+                        <div class="input-group input-group-sm">
+                          <input type="text" class="form-control" placeholder="guest Role" />
+                          <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="nar-rol-group panel-heading" data-toggle="collapse" data-target="#role-1">user <span class="badge pull-right">11</span></div>
+                  <div id="role-1" class="panel-collapse collapse">
+                    <div class="list-group alert-list-group">
+                      <a class="list-group-item"><div class="nar-rol-name alert">FLADMINNUR - Field Admin Nurse</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">FLALLHWS - Field All Housing w/ Services</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">FLNONCLINI - Field Non-Clinician</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">NCADMIN - National Campus Admin</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">NCNONCLINI - National Campus Non-Clinician</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">NCNURSE - National Campus Nurse</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">NCVIEWONLY - National Campus View-Only</div></a>
+                      <a class="list-group-item list-group-item-sm">
+                        <div class="input-group input-group-sm">
+                          <input type="text" class="form-control" placeholder="user Role" />
+                          <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel panel-default">
+                  <div class="nar-rol-group panel-heading" data-role-parent="1" data-toggle="collapse" data-target="#role-2">admin <small>inherits <em>user</em></small> <span class="badge pull-right">4</span></div>
+                  <div id="role-2" class="panel-collapse collapse">
+                    <div class="list-group alert-list-group">
+                      <a class="list-group-item"><div class="nar-rol-name alert">DEVELOPER - Developer</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">GSDS - GSDS Service</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">NCSUPERADM - National Campus Super-Admin</div></a>
+                      <a class="list-group-item"><div class="nar-rol-name alert">SCHEDULER - Scheduler</div></a>
+                      <a class="list-group-item list-group-item-sm">
+                        <div class="input-group input-group-sm">
+                          <input type="text" class="form-control" placeholder="admin Role" />
+                          <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Role group" />
+                <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
+              </div>
+            </div>
+            <div class="acl-col col-md-12">
+              <h5><strong>Users</strong></h5>
+              <div class="user-panel-group panel-group">
+                <div class="panel panel-default">
+                  <div class="nar-usr-group panel-heading" data-toggle="collapse" data-target="#users">All Users <span class="badge pull-right">2</span></div>
+                  <div id="users" class="panel-collapse collapse">
+                    <div class="list-group alert-list-group">
+                      <a class="list-group-item"><div class="nar-usr-name alert">rkoller <span class="nar-usr-fullname">(Robert Koller)</span></div></a>
+                      <a class="list-group-item"><div class="nar-usr-name alert">cbeck <span class="nar-usr-fullname">(Chris Beck)</span></div></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="User name" />
+                <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="navigation-column col-md-4 col-md-pull-4">
+          <h4>Navigation</h4>
+          <div class="navigation-panel-group panel-group">
+            <div class="panel panel-default">
+              <div class="panel-heading" data-toggle="collapse" data-target="#navigation-0"><span class="nar-nav-name">Client</span> <span class="badge pull-right">3</span></div>
+              <div id="navigation-0" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="form-group">
+                    <label class="form-label col-md-4">Group</label>
+                    <span class="nar-nav-group btn btn-default btn-xs form-static-control">(default)</span>
+                  </div>
+                </div>
+                <div class="list-group alert-list-group">
+                  <a class="list-group-item">
+                    <div class="alert">
+                      <span class="nar-nav-menu-name list-group-item-heading">List</span>
+                      <span class="nar-nav-menu-route btn btn-success btn-xs pull-right" title="Route">List</span>
+                      <div class="list-group-item-text">
+                        <dl>
+                          <dt class="sr-only">
+                            <caption>Resource and Privilege</caption>
+                          </dt>
+                          <dd>
+                            <div class="nar-nav-menu-rp btn-group">
+                              <span class="nar-nav-menu-rp-res btn btn-info btn-xs" title="Resource">controller/Application\Controller\Client</span>
+                              <span class="nar-nav-menu-rp-pri btn btn-info btn-xs" title="Privilege">list</span>
+                            </div>
+                          </dd>
+                        </dl>
                       </div>
-                    </dd>
-                  </dl>
-                </div>
-              </a>
-              <a class="list-group-item">
-                <span class="nar-nav-menu-name list-group-item-heading">View</span>
-                <span class="nar-nav-menu-route btn btn-success btn-xs pull-right">View</span>
-                <div class="list-group-item-text">
-                  <dl>
-                    <dt class="sr-only">
-                      <caption>Resource and Privilege</caption>
-                    </dt>
-                    <dd>
-                      <div class="nar-nav-menu-rp btn-group">
-                        <span class="nar-nav-menu-rp-pre btn btn-primary btn-xs" title="Prefix">controller/</span>
-                        <span class="nar-nav-menu-rp-res btn btn-info btn-xs" title="Resource">Application\Controller\Client</span>
-                        <span class="nar-nav-menu-rp-pri btn btn-success btn-xs" title="Privilege">view</span>
+                    </div>
+                  </a>
+                  <a class="list-group-item">
+                    <div class="alert">
+                      <span class="nar-nav-menu-name list-group-item-heading">View</span>
+                      <span class="nar-nav-menu-route btn btn-success btn-xs pull-right">View</span>
+                      <div class="list-group-item-text">
+                        <dl>
+                          <dt class="sr-only">
+                            <caption>Resource and Privilege</caption>
+                          </dt>
+                          <dd>
+                            <div class="nar-nav-menu-rp btn-group">
+                              <span class="nar-nav-menu-rp-res btn btn-info btn-xs" title="Resource">controller/Application\Controller\Client</span>
+                              <span class="nar-nav-menu-rp-pri btn btn-info btn-xs" title="Privilege">view</span>
+                            </div>
+                          </dd>
+                        </dl>
                       </div>
-                    </dd>
-                  </dl>
-                </div>
-              </a>
-              <a class="list-group-item">
-                <span class="nar-nav-menu-name list-group-item-heading">Edit</span>
-                <span class="nar-nav-menu-route btn btn-success btn-xs pull-right">Edit</span>
-                <div class="list-group-item-text">
-                  <dl>
-                    <dt class="sr-only">
-                      <caption>Resource and Privilege</caption>
-                    </dt>
-                    <dd>
-                      <div class="nar-nav-menu-rp btn-group">
-                        <span class="nar-nav-menu-rp-pre btn btn-primary btn-xs" title="Prefix">controller/</span>
-                        <span class="nar-nav-menu-rp-res btn btn-info btn-xs" title="Resource">Application\Controller\Client</span>
-                        <span class="nar-nav-menu-rp-pri btn btn-success btn-xs" title="Privilege">edit</span>
+                    </div>
+                  </a>
+                  <a class="list-group-item">
+                    <div class="alert">
+                      <span class="nar-nav-menu-name list-group-item-heading">Edit</span>
+                      <span class="nar-nav-menu-route btn btn-success btn-xs pull-right">Edit</span>
+                      <div class="list-group-item-text">
+                        <dl>
+                          <dt class="sr-only">
+                            <caption>Resource and Privilege</caption>
+                          </dt>
+                          <dd>
+                            <div class="nar-nav-menu-rp btn-group">
+                              <span class="nar-nav-menu-rp-res btn btn-info btn-xs" title="Resource">controller/Application\Controller\Client</span>
+                              <span class="nar-nav-menu-rp-pri btn btn-info btn-xs" title="Privilege">edit</span>
+                            </div>
+                          </dd>
+                        </dl>
                       </div>
-                    </dd>
-                  </dl>
+                    </div>
+                  </a>
+                  <a class="list-group-item list-group-item-sm">
+                    <div class="input-group input-group-sm">
+                      <input type="text" class="form-control" placeholder="Branch Title" />
+                      <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
+                    </div>
+                  </a>
                 </div>
-              </a>
-              <a class="list-group-item list-group-item-sm">
-                <div class="input-group input-group-sm">
-                  <input type="text" class="form-control" placeholder="Branch Title" />
-                  <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
-                </div>
-              </a>
+              </div>
             </div>
           </div>
           <div class="input-group input-group-sm">
@@ -112,337 +228,259 @@
             <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
           </div>
         </div>
-        <div class="col-md-4">
-          <h4>ACL</h4>
-          <div class="row">
-            <div class="acl-col col-md-12">
-              <h5><strong>Resources</strong></h5>
-              <div class="panel-group">
-                <div class="panel panel-default">
-                  <div class="nar-res-group panel-heading">Application <span class="badge pull-right">3</span></div>
-                  <div class="nar-res-group panel-heading">Controller\Client <span class="badge pull-right">3</span></div>
-                  <div class="list-group alert-list-group">
-                    <a class="list-group-item"><div class="nar-res-name alert">List</div></a>
-                    <a class="list-group-item"><div class="nar-res-name alert">View</div></a>
-                    <a class="list-group-item"><div class="nar-res-name alert">Edit</div></a>
-                    <a class="list-group-item list-group-item-sm">
-                      <div class="input-group input-group-sm">
-                        <input type="text" class="form-control" placeholder="Resource" />
-                        <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
-                      </div>
-                    </a>
+        <div class="route-column col-md-4">
+          <h4>Routes</h4>
+          <div class="route-panel-group panel-group">
+            <div class="panel panel-default">
+              <div class="nar-route-name panel-heading" data-toggle="collapse" data-target="#route-0">Client <span class="badge pull-right">3</span></div>
+              <div id="route-0" class="panel-collapse collapse">
+                <div class="panel-body">
+                  <div class="form-group row">
+                    <label class="form-label col-md-4">Namespace</label>
+                    <span class="col-md-8">
+                      <span class="nar-route-namespace btn btn-primary btn-xs form-static-control">Application</span>
+                    </span>
                   </div>
-                  <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" placeholder="Resource group" />
-                    <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
+                  <div class="form-group row">
+                    <label class="form-label col-md-4">Controller</label>
+                    <span class="col-md-8">
+                      <span class="nar-route-controller btn btn-primary btn-xs form-static-control">Controller\Client</span>
+                    </span>
+                  </div>
+                  <div class="form-group row">
+                    <label class="form-label col-md-4">Roles</label>
+                    <span class="col-md-8">
+                      <span class="form-static-control">
+                        <ul class="nar-route-roles list-unstyled">
+                          <li><span class="nar-route-role btn btn-success btn-xs">user</span><span class="close">&times;</span></li>
+                        </ul>
+                      </span>
+                    </span>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="acl-col col-md-12">
-              <h5><strong>Roles</strong></h5>
-              <div class="panel-group">
-                <div class="panel panel-default">
-                  <div class="nar-rol-group panel-heading">guest <span class="badge pull-right">0</span></div>
+                <div class="list-group alert-list-group">
+                  <a class="list-group-item">
+                    <div class="alert">
+                      <span class="nar-route-sub-name list-group-item-heading">List
+                        <div class="btn-group pull-right">
+                          <span class="nar-route-sub-namespace btn btn-primary btn-xs" title="Namespace">Application</span>
+                          <span class="nar-route-sub-controller btn btn-primary btn-xs" title="Controller">Controller\Client</span>
+                          <span class="nar-route-sub-action btn btn-success btn-xs" title="Action">list</span>
+                        </div>
+                      </span> 
+                      <div class="list-group-item-text">
+                        <dl>
+                          <dt>
+                            <caption class="nar-route-sub-def">Segments 
+                              <span class="pull-right btn btn-default btn-xs">Edit</span>
+                              <span class="pull-right badge">4</span>
+                            </caption>
+                          </dt>
+                          <dd class="nar-route-sub-def-detail" style="display: none;">
+                            <small>
+                              <table class="table table-condensed">
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Constraint</th>
+                                    <th>Prepend</th>
+                                    <th>Optional</th>
+                                    <th>Remove</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>action</td>
+                                    <td>(?!\border_by\b)(?!\bpage\b)[a-zA-Z][a-zA-Z0-9_-]*</td>
+                                    <td>/</td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td><span class="close">&times;</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>id</td>
+                                    <td>[0-9]+</td>
+                                    <td>/</td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td><span class="close">&times;</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>order_by</td>
+                                    <td>[a-zA-Z][a-zA-Z0-9_-]*</td>
+                                    <td>/order_by/</td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td><span class="close">&times;</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>order</td>
+                                    <td>ASC|DESC</td>
+                                    <td>/</td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td><span class="close">&times;</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td>page</td>
+                                    <td>[0-9]+</td>
+                                    <td>/page/</td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td><span class="close">&times;</span></td>
+                                  </tr>
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td>
+                                        <button class="btn btn-default btn-sm">Add</button>
+                                    </td>
+                                  </tr>
+                                </tfoot>
+                              </table>
+                            </small>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="list-group-item">
+                    <div class="alert">
+                      <span class="nar-route-sub-name list-group-item-heading">View
+                        <div class="btn-group pull-right">
+                          <span class="nar-route-sub-namespace btn btn-primary btn-xs" title="Namespace">Application</span>
+                          <span class="nar-route-sub-controller btn btn-primary btn-xs" title="Controller">Controller\Client</span>
+                          <span class="nar-route-sub-action btn btn-success btn-xs" title="Action">view</span>
+                        </div>
+                      </span>
+                      <div class="list-group-item-text">
+                        <dl>
+                          <dt>
+                            <caption class="nar-route-sub-dev">Segments 
+                              <span class="pull-right btn btn-default btn-xs">Edit</span>
+                              <span class="pull-right badge">1</span>
+                            </caption>
+                          </dt>
+                          <dd class="nar-route-sub-def-detail" style="display: none;">
+                            <small>
+                              <table class="table table-condensed">
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Constraint</th>
+                                    <th>Prepend</th>
+                                    <th>Optional</th>
+                                    <th>Remove</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>id</td>
+                                    <td>[0-9]+</td>
+                                    <td>/</td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td><span class="close">&times;</span></td>
+                                  </tr>
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td>
+                                        <button class="btn btn-default btn-sm">Add</button>
+                                    </td>
+                                  </tr>
+                                </tfoot>
+                              </table>
+                            </small>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </a>
+                  <a class="list-group-item">
+                    <div class="alert">
+                      <span class="nar-route-sub-name list-group-item-heading">Edit
+                        <div class="btn-group pull-right">
+                          <span class="nar-route-sub-namespace btn btn-primary btn-xs" title="Namespace">Application</span>
+                          <span class="nar-route-sub-controller btn btn-primary btn-xs" title="Controller">Controller\Client</span>
+                          <span class="nar-route-sub-action btn btn-success btn-xs" title="Action">edit</span>
+                        </div>
+                      </span>
+                      <div class="list-group-item-text">
+                        <dl>
+                          <dt>
+                            <caption class="nar-route-sub-def">Segments 
+                              <span class="pull-right btn btn-default btn-xs">Edit</span>
+                              <span class="pull-right badge">1</span>
+                            </caption>
+                          </dt>
+                          <dd class="nar-route-sub-def-detail" style="display: none;">
+                            <small>
+                              <table class="table table-condensed">
+                                <thead>
+                                  <tr>
+                                    <th>Name</th>
+                                    <th>Constraint</th>
+                                    <th>Prepend</th>
+                                    <th>Optional</th>
+                                    <th>Remove</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <td>id</td>
+                                    <td>[0-9]+</td>
+                                    <td>/</td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td><span class="close">&times;</span></td>
+                                  </tr>
+                                </tbody>
+                                <tfoot>
+                                  <tr>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control input-sm" />
+                                    </td>
+                                    <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
+                                    <td>
+                                        <button class="btn btn-default btn-sm">Add</button>
+                                    </td>
+                                  </tr>
+                                </tfoot>
+                              </table>
+                            </small>
+                          </dd>
+                        </dl>
+                      </div>
+                    </div>
+                  </a>
                   <a class="list-group-item list-group-item-sm">
                     <div class="input-group input-group-sm">
-                      <input type="text" class="form-control" placeholder="guest Role" />
+                      <input type="text" class="form-control" placeholder="Path Title" />
                       <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
                     </div>
                   </a>
                 </div>
-                <div class="panel panel-default">
-                  <div class="nar-rol-group panel-heading">user <span class="badge pull-right">11</span></div>
-                  <div class="list-group alert-list-group">
-                    <a class="list-group-item"><div class="nar-rol-name alert">FLADMINNUR - Field Admin Nurse</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">FLALLHWS - Field All Housing w/ Services</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">FLNONCLINI - Field Non-Clinician</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">NCADMIN - National Campus Admin</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">NCNONCLINI - National Campus Non-Clinician</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">NCNURSE - National Campus Nurse</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">NCVIEWONLY - National Campus View-Only</div></a>
-                    <a class="list-group-item list-group-item-sm">
-                      <div class="input-group input-group-sm">
-                        <input type="text" class="form-control" placeholder="user Role" />
-                        <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
-                      </div>
-                    </a>
-                  </div>
-                  <div class="nar-rol-group panel-heading">admin <span class="badge pull-right">4</span></div>
-                  <div class="list-group alert-list-group">
-                    <a class="list-group-item"><div class="nar-rol-name alert">DEVELOPER - Developer</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">GSDS - GSDS Service</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">NCSUPERADM - National Campus Super-Admin</div></a>
-                    <a class="list-group-item"><div class="nar-rol-name alert">SCHEDULER - Scheduler</div></a>
-                    <a class="list-group-item list-group-item-sm">
-                      <div class="input-group input-group-sm">
-                        <input type="text" class="form-control" placeholder="admin Role" />
-                        <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="input-group input-group-sm">
-                  <input type="text" class="form-control" placeholder="Role group" />
-                  <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
-                </div>
               </div>
-            </div>
-            <div class="acl-col col-md-12">
-              <h5><strong>Users</strong></h5>
-              <div class="panel-group"></div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <h4>Routes</h4>
-          <div class="panel panel-default">
-            <div class="nar-route-name panel-heading">Client <span class="badge pull-right">3</span></div>
-            <div class="panel-body">
-              <div class="form-group row">
-                <label class="form-label col-md-4">Namespace</label>
-                <span class="col-md-8">
-                  <span class="nar-route-namespace btn btn-primary btn-xs form-static-control">Application</span>
-                </span>
-              </div>
-              <div class="form-group row">
-                <label class="form-label col-md-4">Controller</label>
-                <span class="col-md-8">
-                  <span class="nar-route-controller btn btn-primary btn-xs form-static-control">Controller\Client</span>
-                </span>
-              </div>
-              <div class="form-group row">
-                <label class="form-label col-md-4">Roles</label>
-                <span class="col-md-8">
-                  <span class="form-static-control">
-                    <ul class="nar-route-roles list-unstyled">
-                      <li><span class="nar-route-role btn btn-success btn-xs">user</span><span class="close">&times;</span></li>
-                    </ul>
-                  </span>
-                </span>
-              </div>
-            </div>
-            <div class="list-group alert-list-group">
-              <a class="list-group-item">
-                <div class="alert">
-                  <span class="nar-route-sub-name list-group-item-heading">List
-                    <div class="btn-group pull-right">
-                      <span class="nar-route-sub-namespace btn btn-primary btn-xs" title="Namespace">Application</span>
-                      <span class="nar-route-sub-controller btn btn-primary btn-xs" title="Controller">Controller\Client</span>
-                      <span class="nar-route-sub-action btn btn-success btn-xs" title="Action">list</span>
-                    </div>
-                  </span> 
-                  <div class="list-group-item-text">
-                    <dl>
-                      <dt>
-                        <caption class="nar-route-sub-def">Segments 
-                          <span class="pull-right btn btn-default btn-xs">Edit</span>
-                          <span class="pull-right badge">4</span>
-                        </caption>
-                      </dt>
-                      <dd class="nar-route-sub-def-detail" style="display: none;">
-                        <small>
-                          <table class="table table-condensed">
-                            <thead>
-                              <tr>
-                                <th>Name</th>
-                                <th>Constraint</th>
-                                <th>Prepend</th>
-                                <th>Optional</th>
-                                <th>Remove</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>action</td>
-                                <td>(?!\border_by\b)(?!\bpage\b)[a-zA-Z][a-zA-Z0-9_-]*</td>
-                                <td>/</td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td><span class="close">&times;</span></td>
-                              </tr>
-                              <tr>
-                                <td>id</td>
-                                <td>[0-9]+</td>
-                                <td>/</td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td><span class="close">&times;</span></td>
-                              </tr>
-                              <tr>
-                                <td>order_by</td>
-                                <td>[a-zA-Z][a-zA-Z0-9_-]*</td>
-                                <td>/order_by/</td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td><span class="close">&times;</span></td>
-                              </tr>
-                              <tr>
-                                <td>order</td>
-                                <td>ASC|DESC</td>
-                                <td>/</td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td><span class="close">&times;</span></td>
-                              </tr>
-                              <tr>
-                                <td>page</td>
-                                <td>[0-9]+</td>
-                                <td>/page/</td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td><span class="close">&times;</span></td>
-                              </tr>
-                            </tbody>
-                            <tfoot>
-                              <tr>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td>
-                                    <button class="btn btn-default btn-sm">Add</button>
-                                </td>
-                              </tr>
-                            </tfoot>
-                          </table>
-                        </small>
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item">
-                <div class="alert">
-                  <span class="nar-route-sub-name list-group-item-heading">View
-                    <div class="btn-group pull-right">
-                      <span class="nar-route-sub-namespace btn btn-primary btn-xs" title="Namespace">Application</span>
-                      <span class="nar-route-sub-controller btn btn-primary btn-xs" title="Controller">Controller\Client</span>
-                      <span class="nar-route-sub-action btn btn-success btn-xs" title="Action">view</span>
-                    </div>
-                  </span>
-                  <div class="list-group-item-text">
-                    <dl>
-                      <dt>
-                        <caption class="nar-route-sub-dev">Segments 
-                          <span class="pull-right btn btn-default btn-xs">Edit</span>
-                          <span class="pull-right badge">1</span>
-                        </caption>
-                      </dt>
-                      <dd class="nar-route-sub-def-detail" style="display: none;">
-                        <small>
-                          <table class="table table-condensed">
-                            <thead>
-                              <tr>
-                                <th>Name</th>
-                                <th>Constraint</th>
-                                <th>Prepend</th>
-                                <th>Optional</th>
-                                <th>Remove</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>id</td>
-                                <td>[0-9]+</td>
-                                <td>/</td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td><span class="close">&times;</span></td>
-                              </tr>
-                            </tbody>
-                            <tfoot>
-                              <tr>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td>
-                                    <button class="btn btn-default btn-sm">Add</button>
-                                </td>
-                              </tr>
-                            </tfoot>
-                          </table>
-                        </small>
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item">
-                <div class="alert">
-                  <span class="nar-route-sub-name list-group-item-heading">Edit
-                    <div class="btn-group pull-right">
-                      <span class="nar-route-sub-namespace btn btn-primary btn-xs" title="Namespace">Application</span>
-                      <span class="nar-route-sub-controller btn btn-primary btn-xs" title="Controller">Controller\Client</span>
-                      <span class="nar-route-sub-action btn btn-success btn-xs" title="Action">edit</span>
-                    </div>
-                  </span>
-                  <div class="list-group-item-text">
-                    <dl>
-                      <dt>
-                        <caption class="nar-route-sub-def">Segments 
-                          <span class="pull-right btn btn-default btn-xs">Edit</span>
-                          <span class="pull-right badge">1</span>
-                        </caption>
-                      </dt>
-                      <dd class="nar-route-sub-def-detail" style="display: none;">
-                        <small>
-                          <table class="table table-condensed">
-                            <thead>
-                              <tr>
-                                <th>Name</th>
-                                <th>Constraint</th>
-                                <th>Prepend</th>
-                                <th>Optional</th>
-                                <th>Remove</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>id</td>
-                                <td>[0-9]+</td>
-                                <td>/</td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td><span class="close">&times;</span></td>
-                              </tr>
-                            </tbody>
-                            <tfoot>
-                              <tr>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td>
-                                    <input type="text" class="form-control input-sm" />
-                                </td>
-                                <td><input type="checkbox" class="form-control" value="1" checked="" /></td>
-                                <td>
-                                    <button class="btn btn-default btn-sm">Add</button>
-                                </td>
-                              </tr>
-                            </tfoot>
-                          </table>
-                        </small>
-                      </dd>
-                    </dl>
-                  </div>
-                </div>
-              </a>
-              <a class="list-group-item list-group-item-sm">
-                <div class="input-group input-group-sm">
-                  <input type="text" class="form-control" placeholder="Path Title" />
-                  <span class="input-group-btn"><button class="btn btn-info">Add</button></span>
-                </div>
-              </a>
             </div>
           </div>
           <div class="input-group input-group-sm">
@@ -465,5 +503,6 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/bootstrap.min.js"></script>
+    <script src="narwhal.js"></script>
 
 </body></html>
