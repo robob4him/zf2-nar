@@ -11,14 +11,46 @@ var acl = {
   rules: [],
   _init: function() {
     $.ajax({
-      url: 'rules.json',
+      url: 'development_GssAuthorize-rules.dat',
       type: 'get',
       dataType: 'json',
       async: false,
       success: function(data) {
-        console.log(data);
+        acl.rules = data;
       }
     });
+    $.ajax({
+      url: 'development_GssAuthorize-roles.dat',
+      type: 'get',
+      dataType: 'json',
+      async: false,
+      success: function(data) {
+        acl.roles = data;
+      }
+    });
+    $.ajax({
+      url: 'development_GssAuthorize-resources.dat',
+      type: 'get',
+      dataType: 'json',
+      async: false,
+      success: function(data) {
+        acl.resources = data;
+      }
+    });
+  },
+  _build: function(resources, roles, rules) {
+    this._build-resources(resources);
+    this._build-roles(roles);
+    this._build-rules(rules);
+  },
+  _build-resources: function(resources) {
+    for(id in resources) {
+      $panel = $('#resource-template').clone().removeAttr('id');
+      $panel.find('.nar-res-group').text(resources[id]);
+      $panel.find('#resource-X').attr('id', 'resource-' + id);
+      $panel.find('.panel-heading').attr('data-target', '#resource-' + id);
+      $panel.appendTo($('.resource-panel-group'));
+    } 
   },
   expand: function() {
     $('.acl-column').removeClass('col-md-4').removeClass('col-md-push-4').addClass('col-md-12');
@@ -43,12 +75,12 @@ var navigation = {
   navs: {},
   _init: function() {
     $.ajax({
-      url: 'navigation.json',
+      url: 'development_GssNavigation-navs.dat',
       type: 'get',
       datatype: 'json',
       async: false,
       success: function(data) {
-        console.log(data);
+        navigation.navs = data;
       }
     });
   },
@@ -64,7 +96,6 @@ var navigation = {
           .removeClass('btn-default')
           .addClass('btn-primary');
       }
-      $panel.appendTo(
     }
   },
 };
@@ -73,12 +104,12 @@ var routing = {
   routes: {},
   _init: function() {
     $.ajax({
-      url: 'routes.json',
+      url: 'development_GssRoute-routes.dat',
       type: 'get',
       datatype: 'json',
       async: false,
       success: function(data) {
-        console.log(data);
+        routing.routes = data;
       }
     });
   },
