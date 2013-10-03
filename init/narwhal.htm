@@ -123,24 +123,6 @@
                 <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
               </div>
             </div>
-            <div class="acl-col col-md-12">
-              <h5><strong>Users</strong></h5>
-              <div class="user-panel-group panel-group">
-                <div class="panel panel-default">
-                  <div class="nar-usr-group panel-heading" data-toggle="collapse" data-target="#users">All Users <span class="badge pull-right">2</span></div>
-                  <div id="users" class="panel-collapse collapse">
-                    <div class="list-group alert-list-group">
-                      <a class="list-group-item"><div class="nar-usr-name alert">rkoller <span class="nar-usr-fullname">(Robert Koller)</span></div></a>
-                      <a class="list-group-item"><div class="nar-usr-name alert">cbeck <span class="nar-usr-fullname">(Chris Beck)</span></div></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="input-group input-group-sm">
-                <input type="text" class="form-control" placeholder="User name" />
-                <span class="input-group-btn"><button class="btn btn-primary">Add</button></span>
-              </div>
-            </div>
           </div>
         </div>
         <div class="navigation-column col-md-4 col-md-pull-4">
@@ -518,12 +500,12 @@
       </div>
 
       <!-- Resource item template -->
-      <a id="resource-item-templace" class="list-group-item"><div class="nar-res-name alert" data-value=""></div></a>
+      <a id="resource-item-template" class="list-group-item"><div class="nar-res-name alert" data-value=""></div></a>
 
       <!-- Role template -->
       <div id="role-template" class="panel panel-default">
-        <div class="nar-rol-group panel-heading" data-toggle="collapse" data-target="#role-X"> <span class="badge pull-right">0</span></div>
-        <div id="role-0" class="panel-collapse collapse">
+        <div class="nar-rol-group panel-heading" data-toggle="collapse" data-target="#role-X"><span class="role-name"></span><span class="collapse role-parent"><small><em></em></small></span> <span class="badge pull-right">0</span></div>
+        <div id="role-X" class="panel-collapse collapse">
           <div class="list-group alert-list-group">
             <a class="list-group-item list-group-item-sm">
               <div class="input-group input-group-sm">
@@ -534,15 +516,9 @@
           </div>
         </div>
       </div>
-
-      <!-- User template -->
-      <div id="user-template" class="panel panel-default">
-        <div class="nar-usr-group panel-heading" data-toggle="collapse" data-target="#users"> <span class="badge pull-right">0</span></div>
-        <div id="users" class="panel-collapse collapse">
-          <div class="list-group alert-list-group">
-          </div>
-        </div>
-      </div>
+      
+      <!-- Role item template -->
+      <a id="role-item-template" class="list-group-item"><div class="nar-rol-name alert" data-value=""></div></a>
 
       <!-- Navigation template -->
       <div id="navigation-template" class="panel panel-default">

@@ -39,24 +39,44 @@ var acl = {
     });
   },
   _build: function(resources, roles, rules) {
-    this._build-resources(resources);
-    this._build-roles(roles);
-    this._build-rules(rules);
+    this._build_resources(resources);
+    this._build_roles(roles);
+    this._build_rules(rules);
   },
-  _build-resources: function(resources) {
-    for(id in resources) {
-      $panel = $('#resource-template').clone().removeAttr('id');
+  _build_resources: function(resources) {
+    for(var id in resources) {
+      var $panel = $('#resource-template').clone().removeAttr('id');
       $panel.find('.nar-res-group').text(resources[id]);
       $panel.find('#resource-X').attr('id', 'resource-' + id);
       $panel.find('.panel-heading').attr('data-target', '#resource-' + id);
       $panel.appendTo($('.resource-panel-group'));
     } 
   },
+  _build_roles: function(roles, parent) {
+    for(var id in roles) {
+      var $panel = $('#role-template').clone().removeAttr('id');
+      $panel.find('.nar-rol-group').text(roles.id);
+      $panel.find('#role-X').attr('id', 'role-' + id);
+      $panel.find('.panel-heading').attr('data-target', '#role-' + id);
+      $panel.appendTo($('.role-panel-group'));
+      for(var iid in roles.id) {
+         
+        if (0 < roles.id.length) {
+          this._build_roles(roles.id, id);
+        }
+      }
+    }
+  },
+  _build_rules: function(rules) {
+    for(var id in rules) {
+      console.log(id);
+    }
+  },
   expand: function() {
     $('.acl-column').removeClass('col-md-4').removeClass('col-md-push-4').addClass('col-md-12');
     $('.navigation-column').removeClass('col-md-pull-4').removeClass('col-md-4').addClass('col-md-6');
     $('.route-column').removeClass('col-md-4').addClass('col-md-6');
-    $('.acl-col').removeClass('col-md-12').addClass('col-md-4');
+    $('.acl-col').removeClass('col-md-12').addClass('col-md-6');
     $('#acl-expand').hide();
     $('#acl-collapse').show();
   },
@@ -64,7 +84,7 @@ var acl = {
     $('.acl-column').addClass('col-md-4').addClass('col-md-push-4').removeClass('col-md-12');
     $('.navigation-column').addClass('col-md-pull-4').addClass('col-md-4').removeClass('col-md-6');
     $('.route-column').addClass('col-md-4').removeClass('col-md-6');
-    $('.acl-col').addClass('col-md-12').removeClass('col-md-4');
+    $('.acl-col').addClass('col-md-12').removeClass('col-md-6');
     $('#acl-collapse').hide();
     $('#acl-expand').show();
   },
@@ -85,8 +105,8 @@ var navigation = {
     });
   },
   _build: function(data) {
-    for(id in data) {
-      $panel = $('#navigation-template').clone().removeAttr('id');
+    for(var id in data) {
+      var $panel = $('#navigation-template').clone().removeAttr('id');
       $panel.find('.nar-nav-name').text(data.id.name);
       $panel.find('#navigation-X').attr('id', 'navigation-' + name);
       $panel.find('.panel-heading').attr('data-target', '#navigation-' + name);
@@ -114,12 +134,12 @@ var routing = {
     });
   },
   _build: function(data) {
-    for(name in data) {
-      $panel = $('#route-template').clone().removeAttr('id');
+    for(var name in data) {
+      var $panel = $('#route-template').clone().removeAttr('id');
       $panel.find('.nar-route-name').text(name);
       $panel.find('#route-X').attr('id', 'route-' + name);
       $panel.find('.panel-heading').attr('data-target', '#route-' + name);
-      options = data[name].options;
+      var options = data[name].options;
       if (options.defaults.__NAMESPACE__) {
         $panel.find('.nar-route-namespace')
           .text(options.defaults.__NAMESPACE__)
